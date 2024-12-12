@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Tier App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to the Multi-Tier Web Application</h1>
+    <div id="data"></div>
+    <script>
+        fetch('http://localhost:5000/api/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('data').innerHTML = `<p>${data.message}</p>`;
+            });
+    </script>
+</body>
+</html>
